@@ -5,5 +5,9 @@ public class Tester {
         Person b = new Person(2, 0);
         System.out.println(a);
         System.out.println(b);
+        Car n = new Car(5, 9);
+        System.out.println(n);
+        n.addPassenger(a);
+        }
     }
-}
+
