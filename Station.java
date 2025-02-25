@@ -15,6 +15,22 @@ public class Station {
         commuters.add(p);
     }
 
-    public 
+    public int getLocation(){
+        return location;
+    }
     
+    public void loadCar(Car c){
+        while ((c.hasRoom() == true)) {
+            for (int i = 0; i < commuters.size(); i++){
+                boolean sameDir = commuters.get(i).getDirection() == c.getDirection(); 
+                    if (sameDir == true){
+                        c.addPassenger(commuters.get(i));
+                        commuters.remove(i);
+                    }
+            
+            }
+        }
+    }
 }
+
+

@@ -60,6 +60,11 @@ public void move(){
         return;
     }
     }
+
+
+public boolean getDirection(){
+    return direction;
+}
 }
 
 
