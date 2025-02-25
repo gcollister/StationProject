@@ -9,6 +9,13 @@ public class Tester {
         System.out.println(n);
         n.addPassenger(a);
         System.out.println(n);
+        System.out.println(n.unload());
+        Road r = new Road();
+        r.addCar(n);
+        r.addStations();
+        System.out.println(r);
+        
+
         }
     }
 
