@@ -33,7 +33,7 @@ public boolean getDirection(){
 }
 
 public String toString(){
-    return super.toString() + "ID : " + id + "Start " + startLocation + " Destination : " + destination + " Going right? : " + direction;
+    return super.toString() + "ID : " + id + " Start " + startLocation + " Destination : " + destination + " Going right? : " + direction;
 }
 
 public int getStart(){
