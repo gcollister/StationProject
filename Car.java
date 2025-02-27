@@ -31,7 +31,7 @@ public void addPassenger(Person p){
  * Method for handing back a person that is eligible to be dropped off
  * removed person from car as well
  * @return one person to be dropped off, null if nobody is available
- * will only return one person even if multiple availible 
+ * will only return one person even if multiple available 
  * */ 
 
     public Person unload(){
