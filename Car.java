@@ -52,14 +52,15 @@ public boolean hasRoom(){
 
 
 public void move(){
-    if (direction == true){
-        currentLocation ++;
-    }else if(direction == false){
-        currentLocation --;
-    }else if (currentLocation == destination){
+    if (currentLocation == destination){
         return;
     }
+    if (direction == true){
+        currentLocation ++;
+    }else {
+        currentLocation -- ;
     }
+} 
 
 
 public boolean getDirection(){
