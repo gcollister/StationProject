@@ -3,10 +3,12 @@ import java.util.ArrayList;
 public class Road {
     private ArrayList<Station> stations;
     private ArrayList<Car> cars;
+    private ArrayList<Person> commuters;
 
     public Road(){
         stations = new ArrayList<Station>();
         cars =  new ArrayList<Car>();
+        commuters = new ArrayList<Person>();
     }
 
     public void addCar(Car c){
@@ -47,6 +49,17 @@ public class Road {
     public void clockOut(Station s, Car c){
         if (c.getLocation() == s.getLocation()){
             cars.remove(c);
+        }
+    }
+
+    public void addPerson(Person p){
+        commuters.add(p);
+    }
+
+    public void assignCommuters(){
+        for (Person p : commuters){
+            int S = p.getStart();
+            stations.get(S).addCommuter(p);
         }
     }
 
