@@ -44,4 +44,10 @@ public class Road {
         return stat;
     }
 
+    public void clockOut(Station s, Car c){
+        if (c.getLocation() == s.getLocation()){
+            cars.remove(c);
+        }
+    }
+
 }

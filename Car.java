@@ -66,6 +66,11 @@ public void move(){
 public boolean getDirection(){
     return direction;
 }
+
+public int getLocation(){
+    return currentLocation;
+}
+
 }
 
 
