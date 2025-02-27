@@ -34,4 +34,14 @@ public class Road {
         return super.toString() + "\n" + "Stations : " + "\n" + s + "\n" + "Cars : " + "\n" + c;
     }
 
+    public Station getStation(int a){
+        Station stat = null;
+        for (Station s : stations){
+            if (s.getLocation() == a){
+                stat = s;
+            }
+        }
+        return stat;
+    }
+
 }
