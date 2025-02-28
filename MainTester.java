@@ -14,6 +14,9 @@ public class MainTester {
         delMar.addCar(c);
         delMar.addCar(d);
         delMar.addCar(e);
+        
+        System.out.println("Added Cars and Stations");
+
         System.out.println(delMar);
 
         Person one = new Person(3, 17);
@@ -31,7 +34,9 @@ public class MainTester {
         delMar.addPerson(six);
 
         delMar.assignCommuters();
-
+        System.out.println("Added People");
+       
+       
         System.out.println(delMar);
 
 

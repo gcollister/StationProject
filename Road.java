@@ -57,9 +57,13 @@ public class Road {
     }
 
     public void assignCommuters(){
-        for (Person p : commuters){
-            int S = p.getStart();
-            stations.get(S).addCommuter(p);
+        for (int i = 0; i < 32; i++){
+            for (int j = 0; j < commuters.size(); j++){
+                if (commuters.get(j).getStart() == stations.get(i).getLocation()){
+                    stations.get(i).addCommuter(commuters.get(j));
+                }
+            }
+        
         }
     }
 
