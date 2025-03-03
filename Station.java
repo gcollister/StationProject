@@ -3,7 +3,7 @@ public class Station {
 
     private int location;
     private ArrayList<Person> commuters;
-    private static int idGen = 1;
+    private static int idGen = 0;
 
     public Station(){
         location = idGen;

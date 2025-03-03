@@ -33,9 +33,8 @@ public class MainTester {
         delMar.addPerson(five);
         delMar.addPerson(six);
 
-        delMar.assignCommuters();
+
         System.out.println("Added People");
-       
        
         System.out.println(delMar);
 

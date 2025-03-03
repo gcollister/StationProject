@@ -10,6 +10,7 @@ public class Person {
 
     public Person(int myDestination, int myStart){
     id = idGen;
+    startLocation = myStart;
     idGen ++;
     destination = myDestination;
     if (destination > startLocation){
@@ -33,7 +34,7 @@ public boolean getDirection(){
 }
 
 public String toString(){
-    return super.toString() + "ID : " + id + " Start " + startLocation + " Destination : " + destination + " Going right? : " + direction;
+    return super.toString() + " ID : " + id + " Start " + startLocation + " Destination : " + destination + " Going right? : " + direction;
 }
 
 public int getStart(){

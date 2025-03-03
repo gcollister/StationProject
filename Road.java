@@ -3,12 +3,11 @@ import java.util.ArrayList;
 public class Road {
     private ArrayList<Station> stations;
     private ArrayList<Car> cars;
-    private ArrayList<Person> commuters;
+
 
     public Road(){
         stations = new ArrayList<Station>();
         cars =  new ArrayList<Car>();
-        commuters = new ArrayList<Person>();
     }
 
     public void addCar(Car c){
@@ -53,18 +52,13 @@ public class Road {
     }
 
     public void addPerson(Person p){
-        commuters.add(p);
-    }
-
-    public void assignCommuters(){
-        for (int i = 0; i < 32; i++){
-            for (int j = 0; j < commuters.size(); j++){
-                if (commuters.get(j).getStart() == stations.get(i).getLocation()){
-                    stations.get(i).addCommuter(commuters.get(j));
-                }
+        for (Station s: stations){
+            if (p.getStart() == s.getLocation()){
+                s.addCommuter(p);
             }
-        
         }
     }
+
+    
 
 }
