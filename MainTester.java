@@ -17,7 +17,6 @@ public class MainTester {
         
         System.out.println("Added Cars and Stations");
 
-        System.out.println(delMar);
 
         Person one = new Person(3, 17);
         Person two = new Person(30, 20);
@@ -37,6 +36,12 @@ public class MainTester {
         System.out.println("Added People");
        
         System.out.println(delMar);
+
+        delMar.run();
+        System.out.println(" Run #1 ");
+        System.out.println(delMar);
+
+        
 
 
     }

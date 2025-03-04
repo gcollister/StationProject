@@ -21,6 +21,16 @@ public class Road {
        }
     }
 
+    public void addCommuters(){
+        for (int i = 0; i < 20; i++){
+            int a = (int)(Math.random() * 32 + 1);
+            int b = (int)(Math.random() * 32 +1 );
+            Person p = new Person(a, b);
+            int start = p.getStart();
+            stations.get(start).addCommuter(p);
+        }
+    }
+
     public String toString(){
         String s = "";
         String c = "";
@@ -72,6 +82,7 @@ public class Road {
             s.loadCar(c);
         }
         
+
            
                 
     }
