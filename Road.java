@@ -70,9 +70,7 @@ public class Road {
     }
 
     public void run(){
-        for (Car c: cars){
-            c.move();
-        }
+        
         for (Car c: cars){
             c.unload();
         }
@@ -80,6 +78,9 @@ public class Road {
             int a = c.getLocation();
             Station s = stations.get(a);
             s.loadCar(c);
+        }
+        for (Car c: cars){
+            c.move();
         }
         
 
