@@ -59,6 +59,15 @@ public class Road {
         }
     }
 
+    public void run(){
+        for (Car c: cars){
+            c.move();
+        }
+        for (Car c: cars){
+            c.unload();
+        }
+    }
+
     
 
 }
