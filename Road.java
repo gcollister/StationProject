@@ -22,7 +22,7 @@ public class Road {
     }
 
     public void addCommuters(){
-        for (int i = 0; i < 20; i++){
+        for (int i = 0; i < 50; i++){
             int a = (int)(Math.random() * 32 + 1);
             int b = (int)(Math.random() * 32 +1 );
             Person p = new Person(a, b);
@@ -71,14 +71,26 @@ public class Road {
 
     public void run(){
         
-        for (Car c: cars){
-            c.unload();
+        while (true){
+            for (Car c: cars){
+             //puts null if no one available
+                Person p = c.unload();
+                if (p != null){
+                    int location = c.getLocation();
+                    stations.get(location).addCommuter(p);
+                } else{
+                    break;
+                }
+            }
         }
+        
         for (Car c: cars){
             int a = c.getLocation();
             Station s = stations.get(a);
             s.loadCar(c);
         }
+        
+        
         for (Car c: cars){
             c.move();
         }
