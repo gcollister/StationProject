@@ -67,20 +67,16 @@ public class Road {
             c.unload();
         }
         for (Car c: cars){
-            if (c.hasRoom() == true){
-                int a = c.getLocation();
-                Station s = stations.get(a);
-             for (Person p: s.getCommuters()){
-                if (p.getDirection() == c.getDirection()){
-                    c.addPassenger(p);
-                }
-            }
+            int a = c.getLocation();
+            Station s = stations.get(a);
+            s.loadCar(c);
         }
-    }
         
-  
-        }
+           
+                
     }
+ }
+
 
     
 

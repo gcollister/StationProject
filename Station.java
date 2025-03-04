@@ -26,6 +26,8 @@ public class Station {
     public String toString(){
         return super.toString() + " Location : " + location + " Commuters : " + commuters;
     }
+
+    
     
     public void loadCar(Car c){
         while ((c.hasRoom() == true)) {
