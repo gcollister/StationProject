@@ -19,6 +19,10 @@ public class Station {
         return location;
     }
 
+    public ArrayList<Person> getCommuters(){
+        return commuters;
+    }
+
     public String toString(){
         return super.toString() + " Location : " + location + " Commuters : " + commuters;
     }

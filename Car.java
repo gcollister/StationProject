@@ -51,6 +51,8 @@ public boolean hasRoom(){
     }
 
 
+
+
 public void move(){
     if (currentLocation == destination){
         return;
@@ -69,6 +71,10 @@ public boolean getDirection(){
 
 public int getLocation(){
     return currentLocation;
+}
+
+public ArrayList<Person> getPassengers(){
+    return passengers;
 }
 
 }
