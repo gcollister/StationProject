@@ -18,19 +18,9 @@ public class MainTester {
         System.out.println("Added Cars and Stations");
 
 
-        Person one = new Person(3, 17);
-        Person two = new Person(30, 20);
-        Person three = new Person(20, 2);
-        Person four = new Person(10, 7);
-        Person five = new Person(15, 25);
-        Person six = new Person(23, 6);
 
-        delMar.addPerson(one);
-        delMar.addPerson(two);
-        delMar.addPerson(three);
-        delMar.addPerson(four);
-        delMar.addPerson(five);
-        delMar.addPerson(six);
+
+        delMar.addCommuters();
 
 
         System.out.println("Added People");
