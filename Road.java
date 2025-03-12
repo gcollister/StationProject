@@ -15,21 +15,23 @@ public class Road {
     }
 
     public void addStations(){
-       for(int i = 1; i <= 32; i++) {
+       for(int i = 1; i <= 5; i++) {
             Station s = new Station();
             stations.add(s);
        }
     }
 
     public void addCommuters(){
-        for (int i = 0; i < 50; i++){
-            int a = (int)(Math.random() * 32 + 1);
-            int b = (int)(Math.random() * 32 +1 );
+        for (int i = 0; i < 10; i++){
+            int a = (int)(Math.random() * 5 + 1);
+            int b = (int)(Math.random() * 5 + 1);
             Person p = new Person(a, b);
             int start = p.getStart();
             stations.get(start).addCommuter(p);
         }
     }
+
+
 
     public String toString(){
         String s = "";
@@ -71,8 +73,9 @@ public class Road {
 
     public void loadStations(){
         
-        while (true){
-            for (Car c: cars){
+        for (Car c: cars){
+            while (true){
+           
              //puts null if no one available
                 Person p = c.unload();
                 if (p != null){

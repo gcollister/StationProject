@@ -14,7 +14,7 @@ public Car(int myDestination, int myCurrentLocation){
 }
 
 public String toString(){
-    return super.toString() + " Destination : " + destination + " CurrentLocation : " + " Going right? : " + direction + " Passangers: " + passengers;
+    return super.toString() + " \n" + "         " + " Destination : " + destination + " \n" + "         " + " CurrentLocation : " + currentLocation +  " \n" + "         " +" Going right? : " + direction + " \n" + "         " + " Passangers: " + passengers + "\n";
 }
 
 public void addPassenger(Person p){

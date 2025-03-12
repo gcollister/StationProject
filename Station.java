@@ -24,19 +24,20 @@ public class Station {
     }
 
     public String toString(){
-        return super.toString() + " Location : " + location + " Commuters : " + commuters;
+        return super.toString() + " \n" + "         " + " Location : " + location + " \n" + "         " + " Commuters : " + commuters + "\n";
     }
 
     
     
     public void loadCar(Car c){
-        while ((c.hasRoom() == true)) {
-            for (int i = 0; i < commuters.size(); i++){
-                boolean sameDir = commuters.get(i).getDirection() == c.getDirection(); 
-                    if (sameDir == true){
-                        c.addPassenger(commuters.get(i));
-                        commuters.remove(i);
-                    }
+        
+            for (int i = 0; i < commuters.size()-1; i++){
+                if ((c.hasRoom() == true)) {
+                    boolean sameDir = commuters.get(i).getDirection() == c.getDirection(); 
+                        if (sameDir == true){
+                            c.addPassenger(commuters.get(i));
+                            commuters.remove(i);
+                        }
             
             }
         }

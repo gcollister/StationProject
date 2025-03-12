@@ -4,16 +4,14 @@ public class MainTester {
 
         Road delMar = new Road();
         delMar.addStations();
-        Car a = new Car(5, 1);
-        Car b = new Car(30, 20);
-        Car c = new Car(15, 31);
-        Car d = new Car(5, 20);
-        Car e = new Car(17, 18);
-        delMar.addCar(a);
-        delMar.addCar(b);
-        delMar.addCar(c);
-        delMar.addCar(d);
-        delMar.addCar(e);
+        for (int i = 0; i < 5; i++){
+            int a = (int) (Math.random() * 5 + 1);
+            int b = (int) (Math.random() * 5 + 1);
+            Car c = new Car(a, b);
+            delMar.addCar(c);
+        }
+        
+      
         
         System.out.println("Added Cars and Stations");
 
@@ -27,11 +25,14 @@ public class MainTester {
        
         System.out.println(delMar);
 
-       
+        delMar.run();
         System.out.println(" Run #1 ");
         System.out.println(delMar);
-
         
+        delMar.run();
+        System.out.println();
+        System.out.println("Run #2");
+        System.out.println(delMar);
 
 
     }
