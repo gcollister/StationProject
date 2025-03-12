@@ -69,7 +69,7 @@ public class Road {
         }
     }
 
-    public void run(){
+    public void loadStations(){
         
         while (true){
             for (Car c: cars){
@@ -82,23 +82,28 @@ public class Road {
                     break;
                 }
             }
+        }     
+    }
+
+    public void unloadCars(){
+        for(Car c: cars){
+            for(Station s: stations){
+                if (s.getLocation() == c.getLocation()){
+                    s.loadCar(c);
+                }
+            }
         }
-        
-        for (Car c: cars){
-            int a = c.getLocation();
-            Station s = stations.get(a);
-            s.loadCar(c);
-        }
-        
-        
-        for (Car c: cars){
+    }
+
+    public void move(){
+        for (Car c : cars){
             c.move();
         }
-        
-
-           
-                
     }
+
+
+
+
  }
 
 

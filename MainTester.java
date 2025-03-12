@@ -27,7 +27,7 @@ public class MainTester {
        
         System.out.println(delMar);
 
-        delMar.run();
+       
         System.out.println(" Run #1 ");
         System.out.println(delMar);
 
