@@ -85,7 +85,7 @@ public class Road {
         }     
     }
 
-    public void unloadCars(){
+    public void loadCars(){
         for(Car c: cars){
             for(Station s: stations){
                 if (s.getLocation() == c.getLocation()){
@@ -101,7 +101,11 @@ public class Road {
         }
     }
 
-
+    public void run(){
+        loadStations();
+        loadCars();
+        move();
+    }
 
 
  }
