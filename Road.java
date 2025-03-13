@@ -3,11 +3,15 @@ import java.util.ArrayList;
 public class Road {
     private ArrayList<Station> stations;
     private ArrayList<Car> cars;
+    private static int numStations;
+    private static int numP;
 
 
     public Road(){
         stations = new ArrayList<Station>();
         cars =  new ArrayList<Car>();
+        numStations = 32;
+        numP = 50;
     }
 
     public void addCar(Car c){
@@ -15,16 +19,16 @@ public class Road {
     }
 
     public void addStations(){
-       for(int i = 1; i <= 5; i++) {
+       for(int i = 1; i <= numStations; i++) {
             Station s = new Station();
             stations.add(s);
        }
     }
 
     public void addCommuters(){
-        for (int i = 0; i < 10; i++){
-            int a = (int)(Math.random() * 5 + 1);
-            int b = (int)(Math.random() * 5 + 1);
+        for (int i = 0; i < numP; i++){
+            int a = (int)(Math.random() * numStations);
+            int b = (int)(Math.random() * numStations );
             Person p = new Person(a, b);
             int start = p.getStart();
             stations.get(start).addCommuter(p);
@@ -110,6 +114,18 @@ public class Road {
         move();
     }
 
+    public int checkPercentage(){
+        int successful = 0;
+        for (Station s : stations){
+            ArrayList<Person> commuters = s.getCommuters();
+            for (Person p : commuters){
+                if (p.getDestination() == s.getLocation()){
+                    successful++;
+                }
+            }
+        }
+        return successful;
+    }
 
  }
 

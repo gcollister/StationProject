@@ -4,9 +4,9 @@ public class MainTester {
 
         Road delMar = new Road();
         delMar.addStations();
-        for (int i = 0; i < 5; i++){
-            int a = (int) (Math.random() * 5 + 1);
-            int b = (int) (Math.random() * 5 + 1);
+        for (int i = 0; i < 10; i++){
+            int a = (int) (Math.random() * 31 + 1);
+            int b = (int) (Math.random() * 31 + 1);
             Car c = new Car(a, b);
             delMar.addCar(c);
         }
@@ -33,6 +33,15 @@ public class MainTester {
         System.out.println();
         System.out.println("Run #2");
         System.out.println(delMar);
+        int a = delMar.checkPercentage();
+        System.out.println(a);
+        System.out.println();
+        for (int i = 0; i < 10; i++){
+            delMar.run();
+        }
+
+       
+        System.out.println(delMar.checkPercentage());
 
 
     }
