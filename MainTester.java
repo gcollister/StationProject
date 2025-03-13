@@ -49,8 +49,10 @@ public class MainTester {
        }
        delMar.unload();
 
-       
+
+       System.out.println(delMar);
        delMar.checkPercentage();
+       //loosing people
 
 
     }

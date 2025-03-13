@@ -45,6 +45,16 @@ public void addPassenger(Person p){
     }
     return null;
 }
+
+    public ArrayList<Person> unloadAll(){
+        ArrayList<Person> unloaded = getPassengers();
+        for (int i = 0; i < passengers.size(); i++){
+            passengers.remove(i);
+            i--;
+        }
+        return unloaded;
+    }
+
     public void remove(Person p){
         passengers.remove(p);
     }

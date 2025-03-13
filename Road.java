@@ -11,20 +11,21 @@ public class Road {
         stations = new ArrayList<Station>();
         cars =  new ArrayList<Car>();
         numStations = 32;
-        numP = 10;
+        numP = 50;
     }
-
+//adds a car to road given a car
     public void addCar(Car c){
         cars.add(c);
     }
 
+//adds a number of stations at once
     public void addStations(){
        for(int i = 1; i <= numStations; i++) {
             Station s = new Station();
             stations.add(s);
        }
     }
-
+//adds commuters based on variable at top
     public void addCommuters(){
         for (int i = 0; i < numP; i++){
             int a = (int)(Math.random() * numStations);
@@ -36,7 +37,7 @@ public class Road {
     }
 
 
-
+//to strings the entire road
     public String toString(){
         String s = "";
         String c = "";
@@ -50,7 +51,7 @@ public class Road {
         }
         return super.toString() + "\n" + "Stations : " + "\n" + s + "\n" + "Cars : " + "\n" + c;
     }
-
+//returns a stations given its position
     public Station getStation(int a){
         Station stat = null;
         for (Station s : stations){
@@ -61,12 +62,7 @@ public class Road {
         return stat;
     }
 
-    public void clockOut(Station s, Car c){
-        if (c.getLocation() == s.getLocation()){
-            cars.remove(c);
-        }
-    }
-
+// adds a person given a person to a station that equals its start position
     public void addPerson(Person p){
         for (Station s: stations){
             if (p.getStart() == s.getLocation()){
@@ -108,27 +104,27 @@ public class Road {
         }
     }
 
+    //unloads cars, loads cars, moves everything
     public void run(){
         loadStations();
-        //printSuccess();
         loadCars();
         move();
     }
 
+    //unloads all cars at end of trial
     public void unload(){
         for (Car c: cars){
-            ArrayList<Person> unloaded = c.getPassengers();
-            for (Person p : unloaded){
+            ArrayList<Person> ar1 = c.unloadAll();
+            for (Person p : ar1){
                 int loc = c.getLocation();
                 Station s = stations.get(loc);
                 s.addCommuter(p);
-                c.remove(p);
             }
         }
     }
 
     
-
+//prints the amount of people who made it to their destination out of people total
     public void checkPercentage(){
         int successful = 0;
         for (Station s : stations){
