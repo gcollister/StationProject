@@ -10,8 +10,8 @@ public class Road {
     public Road(){
         stations = new ArrayList<Station>();
         cars =  new ArrayList<Car>();
-        numStations = 32;
-        numP = 50;
+        numStations = 5;
+        numP = 10;
     }
 
     public void addCar(Car c){
@@ -76,7 +76,6 @@ public class Road {
     }
 
     public void loadStations(){
-        
         for (Car c: cars){
             while (true){
            
@@ -89,7 +88,8 @@ public class Road {
                     break;
                 }
             }
-        }     
+        } 
+       
     }
 
     public void loadCars(){
@@ -110,8 +110,18 @@ public class Road {
 
     public void run(){
         loadStations();
+        printSuccess();
         loadCars();
         move();
+    }
+
+    public void printSuccess(){
+        int amtofSuccess = 0;
+        for (Station s : stations){
+            amtofSuccess += s.removeC();
+            
+        } 
+        System.out.println(amtofSuccess); 
     }
 
     public int checkPercentage(){

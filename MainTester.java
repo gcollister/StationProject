@@ -1,12 +1,15 @@
 public class MainTester {
     
     public static void main(String[] args) {
+        int amtofCars = 3;
+        int numStations = 5;
+        int numP = 10;
 
         Road delMar = new Road();
         delMar.addStations();
-        for (int i = 0; i < 10; i++){
-            int a = (int) (Math.random() * 31 + 1);
-            int b = (int) (Math.random() * 31 + 1);
+        for (int i = 0; i < amtofCars; i++){
+            int a = (int) (Math.random() * numStations);
+            int b = (int) (Math.random() * numStations);
             Car c = new Car(a, b);
             delMar.addCar(c);
         }
@@ -36,7 +39,7 @@ public class MainTester {
         int a = delMar.checkPercentage();
         System.out.println(a);
         System.out.println();
-        for (int i = 0; i < 10; i++){
+        for (int i = 0; i < 50; i++){
             delMar.run();
         }
 

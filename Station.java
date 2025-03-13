@@ -23,6 +23,17 @@ public class Station {
         return commuters;
     }
 
+    public int removeC(){
+        int amtremoved = 0;
+        for (Person p : commuters){
+            if (p.getDestination() == location){
+                commuters.remove(p);
+                amtremoved++;
+            }
+        }
+        return amtremoved;
+    }
+
     public String toString(){
         return super.toString() + " \n" + "         " + " Location : " + location + " \n" + "         " + " Commuters : " + commuters + "\n";
     }
