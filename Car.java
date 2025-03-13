@@ -40,10 +40,14 @@ public void addPassenger(Person p){
         if(a.getDestination() == currentLocation || destination == currentLocation){
             passengers.remove(i);
             return a;
+
         }
     }
     return null;
 }
+    public void remove(Person p){
+        passengers.remove(p);
+    }
 
 public boolean hasRoom(){
     return passengers.size() < 3;
@@ -75,6 +79,10 @@ public int getLocation(){
 
 public ArrayList<Person> getPassengers(){
     return passengers;
+}
+
+public int getDestination(){
+    return destination;
 }
 
 }

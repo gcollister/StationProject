@@ -23,16 +23,7 @@ public class Station {
         return commuters;
     }
 
-    public int removeC(){
-        int amtremoved = 0;
-        for (Person p : commuters){
-            if (p.getDestination() == location){
-                commuters.remove(p);
-                amtremoved++;
-            }
-        }
-        return amtremoved;
-    }
+    
 
     public String toString(){
         return super.toString() + " \n" + "         " + " Location : " + location + " \n" + "         " + " Commuters : " + commuters + "\n";
@@ -42,12 +33,13 @@ public class Station {
     
     public void loadCar(Car c){
         
-            for (int i = 0; i < commuters.size()-1; i++){
-                if ((c.hasRoom() == true)) {
+            for (int i = 0; i < commuters.size(); i++){
+                if ((c.hasRoom() == true) && (c.getLocation() != c.getDestination())) {
                     boolean sameDir = commuters.get(i).getDirection() == c.getDirection(); 
                         if (sameDir == true){
                             c.addPassenger(commuters.get(i));
                             commuters.remove(i);
+                            i--;
                         }
             
             }

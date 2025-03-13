@@ -110,19 +110,23 @@ public class Road {
 
     public void run(){
         loadStations();
-        printSuccess();
+        //printSuccess();
         loadCars();
         move();
     }
 
-    public void printSuccess(){
-        int amtofSuccess = 0;
-        for (Station s : stations){
-            amtofSuccess += s.removeC();
-            
-        } 
-        System.out.println(amtofSuccess); 
+    public void unload(){
+        for (Car c: cars){
+            ArrayList<Person> unloaded = c.getPassengers();
+            for (Person p : unloaded){
+                Station s = stations.get(c.getLocation());
+                s.addCommuter(p);
+                c.remove(p);
+            }
+        }
     }
+
+    
 
     public int checkPercentage(){
         int successful = 0;
@@ -136,6 +140,8 @@ public class Road {
         }
         return successful;
     }
+
+
 
  }
 
