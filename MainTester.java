@@ -1,9 +1,9 @@
 public class MainTester {
     
     public static void main(String[] args) {
-        int amtofCars = 3;
-        int numStations = 5;
-        int numP = 10;
+        int amtofCars = 20;
+        int numStations = 32;
+      
 
         Road delMar = new Road();
         delMar.addStations();
@@ -42,15 +42,15 @@ public class MainTester {
         //System.out.println(delMar);
         //System.out.println("Run #5");
        //System.out.println(delMar);
-        int a = delMar.checkPercentage();
-        System.out.println(a);
+       
         System.out.println();
         for (int i = 0; i < 6; i++){
             delMar.run();
        }
+       delMar.unload();
 
        
-       System.out.println(delMar.checkPercentage());
+       delMar.checkPercentage();
 
 
     }

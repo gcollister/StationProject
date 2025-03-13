@@ -10,7 +10,7 @@ public class Road {
     public Road(){
         stations = new ArrayList<Station>();
         cars =  new ArrayList<Car>();
-        numStations = 5;
+        numStations = 32;
         numP = 10;
     }
 
@@ -28,7 +28,7 @@ public class Road {
     public void addCommuters(){
         for (int i = 0; i < numP; i++){
             int a = (int)(Math.random() * numStations);
-            int b = (int)(Math.random() * numStations );
+            int b = (int)(Math.random() * numStations);
             Person p = new Person(a, b);
             int start = p.getStart();
             stations.get(start).addCommuter(p);
@@ -119,7 +119,8 @@ public class Road {
         for (Car c: cars){
             ArrayList<Person> unloaded = c.getPassengers();
             for (Person p : unloaded){
-                Station s = stations.get(c.getLocation());
+                int loc = c.getLocation();
+                Station s = stations.get(loc);
                 s.addCommuter(p);
                 c.remove(p);
             }
@@ -128,7 +129,7 @@ public class Road {
 
     
 
-    public int checkPercentage(){
+    public void checkPercentage(){
         int successful = 0;
         for (Station s : stations){
             ArrayList<Person> commuters = s.getCommuters();
@@ -138,7 +139,15 @@ public class Road {
                 }
             }
         }
-        return successful;
+        int total = 0;
+        for (Station s : stations){
+            ArrayList<Person> commuters = s.getCommuters();
+            for (Person p : commuters){
+                total ++;
+            }
+        }
+        System.out.println(successful + " people made it out of " + total );
+
     }
 
 

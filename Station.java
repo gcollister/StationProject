@@ -36,7 +36,7 @@ public class Station {
             for (int i = 0; i < commuters.size(); i++){
                 if ((c.hasRoom() == true) && (c.getLocation() != c.getDestination())) {
                     boolean sameDir = commuters.get(i).getDirection() == c.getDirection(); 
-                        if (sameDir == true){
+                        if (sameDir == true && (commuters.get(i).getDestination() != c.getLocation())){
                             c.addPassenger(commuters.get(i));
                             commuters.remove(i);
                             i--;
