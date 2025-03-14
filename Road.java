@@ -113,16 +113,6 @@ public class Road {
 
     //unloads all cars at end of trial
     //something wrong with the unload method, people are going missing
-    public void unload(){
-        for (Car c: cars){
-            ArrayList<Person> ar1 = c.unloadAll();
-            for (Person p : ar1){
-                int loc = c.getLocation();
-                Station s = stations.get(loc);
-                s.addCommuter(p);
-            }
-        }
-    }
 
     
 //prints the amount of people who made it to their destination out of people total
@@ -136,6 +126,7 @@ public class Road {
                 }
             }
         }
+
         int total = 0;
         for (Station s : stations){
             ArrayList<Person> commuters = s.getCommuters();

@@ -1,7 +1,7 @@
 public class MainTester {
     
     public static void main(String[] args) {
-        int amtofCars = 20;
+        int amtofCars = 40;
         int numStations = 32;
       
 
@@ -30,24 +30,26 @@ public class MainTester {
 
         delMar.run();
         System.out.println(" Run #1 ");
-        System.out.println(delMar);
+        //System.out.println(delMar);
         
         delMar.run();
         System.out.println();
         System.out.println("Run #2");
-        System.out.println(delMar);
+        //System.out.println(delMar);
         delMar.checkPercentage();
  
         System.out.println();
-        for (int i = 0; i < 6; i++){
+        for (int i = 0; i < 8; i++){
             delMar.run();
        }
        delMar.checkPercentage();
-       System.out.println("...unloading");
-       delMar.unload();
+       //delMar.unload();
 
 
-       System.out.println(delMar);
+       //has last of people in cars loaded into stations after the cars move
+       delMar.loadStations();
+       //System.out.println(delMar);
+
        delMar.checkPercentage();
        //loosing people
 
