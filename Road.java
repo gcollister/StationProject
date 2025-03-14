@@ -142,6 +142,12 @@ public class Road {
                 total ++;
             }
         }
+        for (Car c : cars){
+            for (Person p : c.getPassengers()){
+                total ++;
+            }
+        }
+
         System.out.println(successful + " people made it out of " + total );
 
     }

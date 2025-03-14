@@ -36,13 +36,8 @@ public class MainTester {
         System.out.println();
         System.out.println("Run #2");
         System.out.println(delMar);
-        //System.out.println("Run #3");
-        //System.out.println(delMar);
-       // System.out.println("Run #4");
-        //System.out.println(delMar);
-        //System.out.println("Run #5");
-       //System.out.println(delMar);
-       
+        delMar.checkPercentage();
+ 
         System.out.println();
         for (int i = 0; i < 6; i++){
             delMar.run();
