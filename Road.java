@@ -112,6 +112,7 @@ public class Road {
     }
 
     //unloads all cars at end of trial
+    //something wrong with the unload method, people are going missing
     public void unload(){
         for (Car c: cars){
             ArrayList<Person> ar1 = c.unloadAll();

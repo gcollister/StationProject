@@ -42,6 +42,8 @@ public class MainTester {
         for (int i = 0; i < 6; i++){
             delMar.run();
        }
+       delMar.checkPercentage();
+       System.out.println("...unloading");
        delMar.unload();
 
 

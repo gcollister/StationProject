@@ -17,6 +17,9 @@ public String toString(){
     return super.toString() + " \n" + "         " + " Destination : " + destination + " \n" + "         " + " CurrentLocation : " + currentLocation +  " \n" + "         " +" Going right? : " + direction + " \n" + "         " + " Passangers: " + passengers + "\n";
 }
 
+//passenger moved
+
+
 public void addPassenger(Person p){
     if (passengers.size() >= 3){
         System.out.println("Error: no room");
@@ -47,9 +50,10 @@ public void addPassenger(Person p){
 }
 
     public ArrayList<Person> unloadAll(){
-        ArrayList<Person> unloaded = getPassengers();
+        ArrayList<Person> unloaded = passengers;
         for (int i = 0; i < passengers.size(); i++){
-            passengers.remove(i);
+            Person p = passengers.get(i);
+            passengers.remove(p);
             i--;
         }
         return unloaded;
